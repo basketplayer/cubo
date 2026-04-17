@@ -282,7 +282,7 @@ figcaption {
 }
 
 .md-content ul li {
-    font-size: 14px !important; /* Stessa dimensione del paragrafo p */
+    font-size: 13px !important; /* Stessa dimensione del paragrafo p */
     line-height: 1.6;           /* Interlinea comoda per leggere */
     margin-bottom: 10px;        /* Spazio tra i punti della lista */
 }
