@@ -70,14 +70,18 @@ figure {
 figure img {
     width: 60% !important;
     height: auto !important;
-    
+}   
 
 /* Didascalia: eredita font e colore dal body */
 figcaption {
-    font-family: inherit;
-    color: inherit;
+    font-family: inherit;      /* Eredita il font dal body o dal contenitore */
+    font-size: 14px !important;           /* O la stessa misura che usi per p (es. 14px) */
+    line-height: 1.5;          /* Allinea l'interlinea a quella dei paragrafi */
+    color: inherit;            /* Stesso colore del testo */
     margin-top: 10px;
-    font-style: italic; /* Opzionale: rende la didascalia un po' diversa dal testo */
+    font-style: italic;        /* Rimuove il corsivo se prima era impostato */
+    font-weight: bold;         /* Grassetto */
+    text-align: center;        /* Di solito le didascalie sono centrate sotto la figura */
 }
 
 
@@ -141,19 +145,24 @@ figcaption {
 /* 3. TABELLE NOTE/WARNING (.note-container) */
 /****************************************************************/
 .note-container table {
+    margin: 0;
+    border-spacing: 0; /* Rimuove spazi tra le celle */
+    border-collapse: collapse;
     width: 100% !important;
     max-width: 95% !important;
-    margin: 10px auto !important;
+    margin: 2px auto !important;
     border-collapse: collapse !important;
     background: transparent !important;
     border: none !important;
-}
+    }
 
 .note-container td {
     border: none !important;
     background: transparent !important;
-    padding: 30px 10px; /* Altezza verticale riga */
+    padding: 5px 5px; /* Altezza verticale riga */
     vertical-align: middle !important;
+    margin-top: 0;
+    margin-bottom: 5px; /* Regola questo valore per decidere la distanza */
 }
 
 
