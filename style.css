@@ -1,0 +1,417 @@
+:root {
+  --md-primary-fg-color: #CD071E !important;
+}
+
+
+
+/* --- STILE PER BARRA DI NAVIGAZIONE ATTIVA --- */
+.md-nav__link--active {
+    color: #CD071E !important; /* Colore del testo */
+    background-color: #cdcdcd !important; /* Colore dello sfondo */
+    font-weight: bold;
+    
+    /* Migliorie estetiche per lo sfondo */
+    padding: 5px 10px;       /* Distanza tra testo e bordo dello sfondo */
+    border-radius: 4px;      /* Arrotonda gli angoli dello sfondo */
+    display: block;          /* Assicura che lo sfondo copra l'intera riga */
+}
+
+
+
+/****************************************************************/
+/* --- STILE PER HEADING E PARAGRAFI --- */
+/* Applica Verdana a tutto il contenuto principale */
+.md-content, body, table, th, td, figcaption {
+    font-family: Verdana, Helvetica, sans-serif !important;
+    color: #333;
+}
+
+/* Titoli: colore, centrati, grassetto e spazio ridotto sotto */
+.md-content h1, .md-content h2, .md-content h3 {
+    color: #CD071E !important;
+    font-weight: bold;
+    font-family: Verdana, Helvetica, sans-serif !important;
+    margin-bottom: 30px !important; /* Spazio sotto tutti i titoli */
+}
+
+.md-content h1 { 
+    font-size: 32px !important; 
+    margin-top: 1em; 
+}
+
+.md-content h2 { 
+    font-size: 24px !important; 
+    margin-top: 0.8em; 
+}
+
+.md-content h3 { 
+    font-size: 20px !important; 
+    margin-top: 0.6em; 
+}
+
+
+p {
+    font-size: 14px !important;
+    line-height: 1.6; /* Rende il testo più leggibile */
+    margin-bottom: 25px; /* Aggiunge un po' di spazio tra un paragrafo e l'altro */
+}
+
+
+
+/****************************************************************/
+/* --- STILE PER LE FIGURE --- */
+/* Figure e Immagini: centrate e responsive */
+figure {
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+}
+
+figure img {
+    width: 60% !important;
+    height: auto !important;
+    
+
+/* Didascalia: eredita font e colore dal body */
+figcaption {
+    font-family: inherit;
+    color: inherit;
+    margin-top: 10px;
+    font-style: italic; /* Opzionale: rende la didascalia un po' diversa dal testo */
+}
+
+
+
+/****************************************************************/
+/* 1. CONTENITORE GENERALE (Centratura) */
+/****************************************************************/
+.table-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden; /* Blocca categoricamente lo scroll orizzontale */
+}
+
+/****************************************************************/
+/* 2. TABELLE STANDARD (.md-content) - LAYOUT LARGO */
+/****************************************************************/
+.md-content table {
+    margin: 20px auto !important;
+    border-collapse: collapse !important;
+    width: 100% !important;      /* Occupa tutto lo spazio del contenitore */
+    max-width: 95% !important;   /* Lascia un piccolo margine di sicurezza ai bordi */
+    table-layout: auto !important; /* Adatta le colonne al contenuto */
+}
+
+/* Gestione Didascalia (Caption) */
+.md-content caption {
+    display: table-caption;
+    caption-side: top;
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Celle: Bordi, Padding e Andata a capo forzata */
+.md-content th, 
+.md-content td {
+    border: 1px solid #000000 !important;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle !important;
+    word-wrap: break-word;   /* Spezza parole lunghe */
+    overflow-wrap: break-word;
+}
+
+/* Sfondo Intestazione */
+.md-content th {
+    background-color: #bdbdbd !important;
+    font-weight: bold !important;
+}
+
+/* Proporzioni Colonne: la prima più stretta, la seconda prende il resto */
+.md-content td:first-child { width: 30%; }
+.md-content td:last-child  { width: 70%; }
+
+/****************************************************************/
+/* 3. TABELLE NOTE/WARNING (.note-container) */
+/****************************************************************/
+.note-container table {
+    width: 100% !important;
+    max-width: 95% !important;
+    margin: 10px auto !important;
+    border-collapse: collapse !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.note-container td {
+    border: none !important;
+    background: transparent !important;
+    padding: 30px 10px; /* Altezza verticale riga */
+    vertical-align: middle !important;
+}
+
+
+.note-container td:first-child {
+    width: 50px !important;      /* Cella stretta */
+    min-width: 50px !important;
+    max-width: 50px !important;
+    padding: 10px 0 !important;  /* Padding solo verticale per centrare */
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+/* Rimuovi eventuali margini dall'immagine che spostano il testo */
+.note-container img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+
+.note-container td:first-child img {
+    display: block;
+    margin: 0 auto !important;
+    width: 32px !important;  /* Forza una dimensione fissa e contenuta */
+    height: 32px !important; /* Mantiene l'icona quadrata */
+    object-fit: contain;     /* Evita distorsioni */
+}
+
+
+/* Colonna del testo */
+.note-container td:last-child {
+    width: auto !important;     /* Prende tutto lo spazio rimanente */
+    padding-left: 10px !important; /* Distanza millimetrica tra icona e testo */
+    text-align: left !important;
+    vertical-align: middle !important;
+}
+
+/* Liste nelle note */
+.note-container td:last-child ul, 
+.note-container td:last-child ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+
+/****************************************************************/
+/* --- STILE PER TOOLTIP --- */
+/* Stile della parola che attiva il tooltip */
+[data-tooltip] {
+    position: relative;
+    display: inline-block; /* AGGIUNGI QUESTA RIGA */
+    cursor: help;
+    border-bottom: 1px dotted #00008B;
+    color: #00008B;
+    font-weight: bold;
+}
+
+
+/* Creazione della nuvoletta (nascosta di default) */
+[data-tooltip]::before {
+    content: attr(data-tooltip); /* Prende il testo dall'attributo HTML */
+    position: absolute;
+    bottom: 125%; /* Posiziona sopra la parola */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00008B; /* Blu scuro come i titoli */
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Verdana, sans-serif; /* Coerente con il tuo body */
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    white-space: normal; /* Permette al testo del tooltip di andare a capo */
+    width: 180px;        /* Larghezza fissa per evitare che occupi tutto lo schermo */
+    max-width: 80vw;    /* Non più dell'80% della larghezza dello schermo */
+}
+
+/* Freccetta sotto il tooltip */
+[data-tooltip]::after {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #00008B transparent transparent transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Mostra il tooltip al passaggio del mouse */
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+/****************************************************************/
+/* --- STILE LISTE A DUE LIVELLI --- */
+
+/* Primo Livello (Principale) */
+.md-content ul {
+    list-style-type: disc; /* Punto pieno */
+    margin-left: 25px;     /* Spazio per far rientrare la lista rispetto al testo */
+    margin-bottom: 20px;
+}
+
+.md-content ul li {
+    font-size: 14px !important; /* Stessa dimensione del paragrafo p */
+    line-height: 1.6;           /* Interlinea comoda per leggere */
+    margin-bottom: 10px;        /* Spazio tra i punti della lista */
+}
+
+/* Secondo Livello (Sottolista) */
+.md-content li ul {
+    list-style-type: circle; /* Cerchio vuoto per il secondo livello */
+    margin-top: 8px;         /* Distanza dalla voce superiore */
+    margin-left: 30px;       /* Rientro maggiore per la gerarchia */
+    margin-bottom: 10px;
+}
+
+.md-content li ul li {
+    font-size: 14px !important; /* Mantiene i 14px anche qui */
+    color: #444;                /* Grigio leggermente più morbido per distinguere */
+}
+
+
+
+/*************************************************************************************/
+/* --- STILE LISTE NUMERATE SINGOLO LIVELLO (14px) --- */
+
+/* Crea un contatore per tutto il contenitore delle note */
+.md-content {
+    counter-reset: nota-counter; 
+}
+
+.md-content ol {
+    list-style-type: none !important; /* Rimuoviamo lo stile default */
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.md-content ol li {
+    counter-increment: nota-counter; /* Incrementa lo stesso contatore */
+    position: relative;
+    padding-left: 30px; /* Spazio per il numero */
+    font-size: 14px !important;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Inserisce il numero corretto prima di ogni riga */
+.md-content ol li::before {
+    content: counter(nota-counter) ".";
+    position: absolute;
+    left: 0;
+    width: 25px;
+    font-weight: normal;
+}
+
+/* Allineamento tabella */
+.note-container {
+    margin: 10px 0 10px 30px !important;
+}
+
+
+
+
+/*************************************************************************************/
+/* --- STILE DROP-DOWN (DETAILS/SUMMARY) --- */
+
+/* Contenitore principale */
+.note-container details {
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+    border: none !important;
+}
+
+/* Rimuove la freccia standard (metodo universale) */
+.note-container summary {
+    display: block !important; /* Forza la rimozione del comportamento 'list-item' */
+    padding: 12px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    list-style: none !important; /* Per Firefox */
+}
+
+/* Rimuove il triangolo su Chrome, Safari, Edge e VS Code */
+.note-container summary::-webkit-details-marker {
+    display: none !important;
+}
+
+/* Rimuove il marcatore su versioni recenti di Chrome/Firefox */
+.note-container summary::marker {
+    content: "" !important;
+    display: none !important;
+}
+
+/* Effetto hover opzionale */
+.note-container summary:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.note-container details .content {
+    padding: 10px 0;
+}
+
+
+
+
+
+
+/*************************************************************************************/
+/* --- QUERY PER SCHERMO CELLULARI --- */
+@media screen and (max-width: 600px) {
+    .md-content h1 { font-size: 26px !important; }
+    .md-content h2 { font-size: 22px !important; }
+    .md-content h3 { font-size: 20px !important; }
+    
+    /* Riduce i margini laterali delle liste per guadagnare spazio */
+    .md-content ul, .md-content ol {
+        margin-left: 15px;
+    }
+}
+
+
+
+
+
+/* Forza la visualizzazione della ricerca su PC */
+@media screen and (min-width: 60.03125em) {
+  .md-search {
+    display: block !important;
+  }
+  .md-search__inner {
+    width: auto !important;
+    display: flex !important;
+  }
+  /* Impedisce al titolo di "schiacciare" la ricerca */
+  .md-header__title {
+    width: auto !important;
+    flex-grow: 1;
+  }
+}
+
